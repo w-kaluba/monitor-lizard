@@ -1,0 +1,14 @@
+@use '../../styles/variables' as *;
+
+.header {
+    display: flex;
+    flex-flow: row wrap;
+    grid-column: span 12;
+    
+    h1.title {
+        font-family: $font-chakra;
+        font-weight: 300;
+        margin: 10px 5px;
+        border-bottom: 2px solid $color-accent;
+    }
+}
