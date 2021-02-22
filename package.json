@@ -39,6 +39,9 @@
     ]
   },
   "devDependencies": {
+    "@types/plotly.js": "^1.54.8",
+    "@types/react": "^17.0.2",
+    "@types/react-plotly.js": "^2.2.4",
     "sass": "^1.32.5"
   }
 }
