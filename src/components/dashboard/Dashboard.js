@@ -1,12 +1,10 @@
 import './Dashboard.scss';
+import '../../components/charts/Candlestick'
+import Candlestick from '../../components/charts/Candlestick';
 
 function Dashboard(props) {
     return (
         <div className="dashboard">
-            {
-            // TO-DO: Graphs for viewing trading prices
-            // TO-DO: Summary section for showing equity value}
-            }
         </div>
     )
 }

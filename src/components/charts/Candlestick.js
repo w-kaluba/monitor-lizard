@@ -2,10 +2,12 @@ import React from 'react';
 import Plot from 'react-plotly.js';
 import data from '../../utils/renderGraph';
 
-function Candlestick(props) {
+async function Candlestick(props) {
+    const plot = await data.candlestickData(data);
+    console.log(plot);
     return (
         <Plot 
-            data={data.candlestickData(data)}
+            data={plot}
             layout= {{
                 dragmode: 'zoom',
                 showlegend: false,
