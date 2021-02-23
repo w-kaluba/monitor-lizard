@@ -2,6 +2,9 @@
 
 .main {
     display: grid;
-    grid-template-columns: repeat(1fr, 12);
-    grid-template-rows: repeat(1fr, 8);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    column-gap: 5px;
+    width: 95%;
+    align-self: center;
 }

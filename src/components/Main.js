@@ -6,12 +6,14 @@ import styles from "./Main.module.scss";
 
 class Main extends React.Component {
     render() {
-        return(
-            <div className={styles.main}>
-                <Header title="monitor lizard."/>
-                <SymbolList />
-                <Dashboard />
-            </div>
+        return (
+            <>
+                <Header title="monitor lizard." />
+                <div className={styles.main}>
+                    <SymbolList />
+                    <Dashboard />
+                </div>
+            </>
         )
     }
 }

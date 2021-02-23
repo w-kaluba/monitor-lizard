@@ -10,7 +10,7 @@ interface Row {
 class Candlestick extends React.Component<{}, PlotParams> {
     constructor(props: any) {
         super(props)
-        this.state = {data: [], layout: {}, frames: [], config: {}};
+        this.state = { data: [], layout: {}, frames: [], config: {} };
     }
 
     updateData = (data: Array<any>) => {
@@ -22,10 +22,10 @@ class Candlestick extends React.Component<{}, PlotParams> {
     loadCandlestickData = (path: string): void => {
         try {
             plotly.d3.csv(path, this.updateData);
-        } catch(err) {
+        } catch (err) {
             console.log(err);
         }
-        return;   
+        return;
     }
 
     unpack(rows: Array<any>, key: string) {
@@ -34,45 +34,53 @@ class Candlestick extends React.Component<{}, PlotParams> {
             return row[key];
         });
     }
-    
+
     /**
      * A function that takes a div element to draw in and draws a candlestick chart
      * @param Element div 
      * @param Array<JSON> data 
      */
-    formatCandlestickData =  (): any => {
-        const trace = {
-            x: this.unpack(this.state.data, 'timestamp'),
-            close: this.unpack(this.state.data, 'close'),
-            high: this.unpack(this.state.data, 'high'),
-            low: this.unpack(this.state.data, 'low'),
-            open: this.unpack(this.state.data, 'open'),
-    
-            increasing: { line: { color: theme.GREEN } },
-            decreasing: { line: { color: theme.RED } },
-    
-            type: 'candlestick',
-            xaxis: 'x',
-            yaxis: 'y'
-        },
-            plotData = [trace],
-            output = {
-                plotData,
-            };
-        return output;
+    formatCandlestickData = (): any => {
+        try {
+            const trace = {
+                x: this.unpack(this.state.data, 'timestamp'),
+                close: this.unpack(this.state.data, 'close'),
+                high: this.unpack(this.state.data, 'high'),
+                low: this.unpack(this.state.data, 'low'),
+                open: this.unpack(this.state.data, 'open'),
+
+                increasing: { line: { color: theme.GREEN } },
+                decreasing: { line: { color: theme.RED } },
+
+                type: 'candlestick',
+                xaxis: 'x',
+                yaxis: 'y'
+            },
+                plotData = [trace];
+            return plotData;
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    componentDidMount() {
+        this.loadCandlestickData("http://0.0.0.0:8000/btcusd_data.csv");
     }
 
     render() {
-        return this.state.data ? (
+        const data = this.formatCandlestickData();
+        console.log(`Data in the render method${data.toString()}`);
+
+        return data ? (
             <Plot
-                data={this.state.data}
+                data={data}
                 layout={this.state.layout}
                 config={this.state.config}
                 onInitialized={(figure) => figure}
                 onUpdate={(figure) => figure}
             />
-        ) : <div></div>;
+        ) : <div>Graph flopped g</div>;
     }
-    
+
 }
 export default Candlestick;
