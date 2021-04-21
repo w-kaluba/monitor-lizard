@@ -1,12 +1,13 @@
-@use '../../styles/variables' as *;
+@use '../../SCSS/variables' as *;
 
 .container {
-    grid-column: 1 / 2;
+  grid-column: 1 / 2;
 }
 
 .title {
-    font-family: 'Chakra Petch';
-    font-weight: 300;
-    border-bottom: 1px solid $color-accent;
-    width: max-content;
+  font-family: "Chakra Petch";
+  font-weight: 300;
+  border-bottom: 1px solid $color-accent;
+  width: max-content;
+	height: 590px;
 }
