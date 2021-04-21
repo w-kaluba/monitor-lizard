@@ -1,0 +1,6 @@
+@use '../../styles/variables' as *;
+
+.dashboard {
+    display: grid;
+    grid-column: 3 / 12;
+}

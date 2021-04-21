@@ -1,0 +1,10 @@
+@use '../styles/variables';
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    column-gap: 5px;
+    width: 95%;
+    align-self: center;
+}
