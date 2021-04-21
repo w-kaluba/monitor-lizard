@@ -1,10 +1,12 @@
-import styles from "./AddButton.module.scss"
-function AddButton(props: Object) {
-    return (
-        <button className={styles.button}>
-            + add a new symbol
-        </button>
-    )
-}
+import styles from "./AddButton.module.scss";
+
+const AddButton = () => {
+  console.log(styles);
+  return (
+    <button className={styles.title}>
+      <span className={styles.title}>+ add a new symbol</span>
+    </button>
+  );
+};
 
 export default AddButton;

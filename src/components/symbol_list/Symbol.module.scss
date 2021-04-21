@@ -1,13 +1,13 @@
-@use "../../styles/variables" as *;
+@import "../../SCSS/variables";
 
 .container {
-    display: flex;
-    flex-flow: row wrap;
-    width: max-content;
-    border-bottom: 1px solid $color-light-blue;
+  display: flex;
+  flex-flow: row wrap;
+  width: max-content;
+  border-bottom: 1px solid $color-light-blue;
 }
 
-.symbol, .change {
-    font-weight: 700;
+.symbol,
+.change {
+  font-weight: 700;
 }
-
