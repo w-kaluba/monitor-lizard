@@ -1,4 +1,4 @@
-@import '../../SCSS/variables';
+@use '../../SCSS/variables' as *;
 
 .container {
   grid-column: 1 / 2;
